@@ -1,26 +1,11 @@
 // @ts-ignore
 let L = window.L;
+const API_URL ='https://raw.githubusercontent.com/sefatanam/FD-GEE/main/coordinates.json'
 
 const RUC = {
     lat: 25.575770,
     lon: 89.827652
 }
-
-// Will fetch from github API
-const Coordinates = [
-  
-    {
-        lat: 25.515758,
-        lon: 89.817442,
-        type: 'Rich'
-    },
-    {
-        lat: 25.595758,
-        lon: 89.997112,
-        type: 'Poor'
-    },
-   
-]
 
 var poorIcon = L.icon({
     iconUrl: './po.png',
@@ -49,11 +34,18 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 
-window.addEventListener('load', () => {
-    Coordinates.forEach((data) => {
-        // L.marker([data.lat, data.lon]).addTo(map);
+window.addEventListener('load', async () => {
+
+    const result = await fetch(API_URL);
+    const coordinates = await result.json()
+
+    coordinates.forEach((data) => {
         if (data.type === 'Rich') {
-            L.marker([data.lat, data.lon], { icon: richIcon }).bindPopup(`Rich Family`).openPopup().addTo(map);
+            L.marker([data.lat, data.lon], { icon: richIcon }).bindPopup(`
+            <p>Name: <b>${data.name}</b></p><br>
+            <p>Occupation: <b>${data.coordinates}</b></p><br>
+            <p>Disability: <b>${data.disability}</b></p><br>
+            `).openPopup().addTo(map);
         } else if (data.type === 'Poor') {
             L.marker([RUC.lat, RUC.lon], { icon: poorIcon }).bindPopup(`Poor Family`).openPopup().addTo(map);
         }
