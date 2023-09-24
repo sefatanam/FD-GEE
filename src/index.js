@@ -41,13 +41,11 @@ window.addEventListener('load', async () => {
 
     coordinates.forEach((data) => {
 
-        L.marker([data.latitude, data.longitude], { icon: data.type === 'Pucca' ? richIcon : poorIcon }).bindPopup(`
+        L.marker([data.latitude, data.longitude], { icon: data.type === 'Rich' ? richIcon : poorIcon }).bindPopup(`
         <p>Name: <b>${data.name}</b></p>
         <p>Occupation: <b>${data.occupation}</b></p>
         <p>Disability: <b>${data.disability}</b></p>
         <p>Income Group: <b>${data.income_group}</b></p>
-        <p>Age Group: <b>${data.age_group}</b></p>
         `).openPopup().addTo(map);
     })
 })
-
