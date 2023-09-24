@@ -8,26 +8,18 @@ const RUC = {
 
 // Will fetch from github API
 const Coordinates = [
+  
     {
-        lat: 25.575770,
-        lon: 89.827652,
-        type: 'Poor'
-    },
-    {
-        lat: 25.575248,
-        lon: 89.827642,
+        lat: 25.515758,
+        lon: 89.817442,
         type: 'Rich'
     },
     {
-        lat: 25.575758,
-        lon: 89.827442,
-        type: 'Rich'
-    },
-    {
-        lat: 25.525758,
-        lon: 89.827112,
+        lat: 25.595758,
+        lon: 89.997112,
         type: 'Poor'
-    }
+    },
+   
 ]
 
 var poorIcon = L.icon({
@@ -41,7 +33,7 @@ var poorIcon = L.icon({
 
 var richIcon = L.icon({
     iconUrl: './ri.png',
-    iconSize: [33, 44],
+    iconSize: [42, 35],
     shadowSize: [50, 64],
     iconAnchor: [16, 55],
     shadowAnchor: [4, 62],
@@ -59,7 +51,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 window.addEventListener('load', () => {
     Coordinates.forEach((data) => {
-        L.marker([data.lat, data.lon]).addTo(map);
+        // L.marker([data.lat, data.lon]).addTo(map);
         if (data.type === 'Rich') {
             L.marker([data.lat, data.lon], { icon: richIcon }).bindPopup(`Rich Family`).openPopup().addTo(map);
         } else if (data.type === 'Poor') {
