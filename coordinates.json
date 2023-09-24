@@ -1,0 +1,20 @@
+[
+  
+    {
+        "lat": 25.515758,
+        "lon": 89.817442,
+        "type": "Rich",
+        "occupation":"Farming",
+        "name":"Abdul Rahman",
+        "disability":"No"
+    },
+    {
+        "lat": 25.595758,
+        "lon": 89.997112,
+        "type": "Poor",
+        "occupation":"Aquaculture",
+        "name":"Faruk Hossain",
+        "disability":"No"
+    }
+   
+]
