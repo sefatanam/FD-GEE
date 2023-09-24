@@ -6,6 +6,7 @@ const RUC = {
     lon: 89.827652
 }
 
+// Will fetch from github API
 const Coordinates = [
     {
         lat: 25.575770,
