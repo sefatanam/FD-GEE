@@ -40,15 +40,12 @@ window.addEventListener('load', async () => {
     const coordinates = await result.json()
 
     coordinates.forEach((data) => {
-        if (data.type === 'Rich') {
-            L.marker([data.lat, data.lon], { icon: richIcon }).bindPopup(`
-            <p>Name: <b>${data.name}</b></p><br>
-            <p>Occupation: <b>${data.coordinates}</b></p><br>
-            <p>Disability: <b>${data.disability}</b></p><br>
-            `).openPopup().addTo(map);
-        } else if (data.type === 'Poor') {
-            L.marker([RUC.lat, RUC.lon], { icon: poorIcon }).bindPopup(`Poor Family`).openPopup().addTo(map);
-        }
+
+        L.marker([data.lat, data.lon], { icon: data.type === 'Rich' ? richIcon : poorIcon }).bindPopup(`
+        <p>Name: <b>${data.name}</b></p>
+        <p>Occupation: <b>${data.occupation}</b></p>
+        <p>Disability: <b>${data.disability}</b></p>
+        `).openPopup().addTo(map);
     })
 })
 
