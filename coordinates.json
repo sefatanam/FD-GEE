@@ -6,7 +6,8 @@
         "type": "Rich",
         "occupation":"Farming",
         "name":"Abdul Rahman",
-        "disability":"No"
+        "disability":"No",
+        "income_group":"10000-20000"
     },
     {
         "lat": 25.595758,
@@ -14,7 +15,9 @@
         "type": "Poor",
         "occupation":"Aquaculture",
         "name":"Faruk Hossain",
-        "disability":"No"
+        "disability":"No",
+        "income_group":"1000-9000"
+
     }
    
 ]

@@ -45,6 +45,7 @@ window.addEventListener('load', async () => {
         <p>Name: <b>${data.name}</b></p>
         <p>Occupation: <b>${data.occupation}</b></p>
         <p>Disability: <b>${data.disability}</b></p>
+        <p>Income Group: <b>${data.income_group}</b></p>
         `).openPopup().addTo(map);
     })
 })
