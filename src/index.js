@@ -31,7 +31,7 @@ const Coordinates = [
 ]
 
 var poorIcon = L.icon({
-    iconUrl: 'po.png',
+    iconUrl: './po.png',
     iconSize: [33, 44],
     shadowSize: [50, 64],
     iconAnchor: [17, 53],
@@ -40,7 +40,7 @@ var poorIcon = L.icon({
 });
 
 var richIcon = L.icon({
-    iconUrl: 'ri.png',
+    iconUrl: './ri.png',
     iconSize: [33, 44],
     shadowSize: [50, 64],
     iconAnchor: [16, 55],
@@ -52,7 +52,7 @@ var richIcon = L.icon({
 var map = L.map('map').setView([RUC.lat, RUC.lon],23);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 20,
+    maxZoom: 10,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
